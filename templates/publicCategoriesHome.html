@@ -1,0 +1,44 @@
+{% include "header.html" %}
+<html>
+<head>
+	{% include "style.html" %}
+</head>
+
+{% include "flash.html" %}
+
+<body>
+
+<div class="row">
+
+<div class="left">
+
+{% include "categoriesList.html" %}
+
+</div>
+
+<div class="separator">
+</div>
+
+<div class="right">
+
+</br>
+<h1>Latest Added Series</h1>
+
+{% for i in latest_series %}
+
+<div class="latestItems">
+</br>
+<a href='{{url_for('showItem', category_name=i.category.name, series_name=i.name)}}'> {{i.name}}</a> ({{i.category.name}}) 
+
+</br>
+</br>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<html>
+<head>
+	{% include "style.html" %}
+</head>
+<body>
+
+<form action= "{{url_for('newItem', category_name= category_name)}}" method = 'POST'>
+
+<p>Series Name:</p>
+<input type = 'text' size='30' name = 'name' required minlength="2">
+
+<p>Director:</p>
+<input type = 'text' size='30' name = 'director' required minlength="2">
+
+<p>Description:</p>
+<input type = 'text' size='30' name = 'description' rows="3" required minlength="2">
+
+<p>Image:</p>
+<input type = 'url' size='30' name = 'picture'>
+
+<p>Category:</p>
+<select name="categoriesList">
+
+    {% for category in allCategories %}
+        {% if (category.name == category_name)%}
+		        <option value="{{category.name}}" SELECTED>{{category.name}}</option>      
+		{% else %}
+	        <option value="{{category.name}}">{{category.name}}</option>
+		{% endif %}
+	{% endfor %}
+</select>
+
+<input type='submit' value='Add'>
+</form>
+<a href= '{{url_for('showItems', category_name= category_name)}}'>Cancel</a>
+</body>
+</html>

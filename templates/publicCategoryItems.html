@@ -1,0 +1,45 @@
+{% include "header.html" %}
+<html>
+<head>
+	{% include "style.html" %}
+</head>
+
+{% include "flash.html" %}
+
+<body>
+
+<div class="row">
+
+<div class="left">
+
+{% include "categoriesList.html" %}
+
+</div>
+
+<div class="separator">
+</div>
+
+<div class="right">
+
+</br>
+<h1>{{itemCategory.name}} Series ({{items|length}} Series)</h1>
+
+
+{% for i in items %}
+
+<div class="seriesItems">
+
+</br>
+<a href='{{url_for('showItem', category_name=i.category.name, series_name=i.name)}}'> {{i.name}}</a>
+
+</br>
+</br> 
+
+
+{% endfor %}
+</div>
+</div>
+
+</body>
+
+</html>

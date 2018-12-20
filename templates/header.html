@@ -1,0 +1,11 @@
+<img class="picture" src="/static/series.jpg" alt="Series" width= "100%;" height="200px">
+<div class="header">
+	<a href="{{url_for('showCategories')}}"> Home </a>
+	<div class="account">
+	{%if 'username' not in session %}
+	    <a href="{{url_for('showLogin')}}"> Login </a>
+    {%else%} 
+	    <a href="{{url_for('gdisconnect')}}"> Logout </a>
+	{% endif %}
+	</div>
+</div>

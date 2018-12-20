@@ -1,0 +1,45 @@
+<html>
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<div class="row">
+
+<div class="coloumn">
+
+<h1>Series Categories</h1>
+
+
+{% for i in series %}
+
+
+<a href='{{url_for('showItems', category_name= i.name) }}'> {{i.name}} </a>
+</br>
+</br>
+
+
+{% endfor %}
+
+</div>
+
+
+<div class="coloumn">
+
+<h1>Latest Added Series</h1>
+
+{% for i in latest_series %}
+
+
+<p>{{i.name}} ({{i.category.name}})</p>
+</br>
+</br>
+
+
+{% endfor %}
+
+</div>
+
+
+</div>
+
+</html>

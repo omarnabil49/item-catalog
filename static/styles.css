@@ -1,0 +1,160 @@
+body {
+    font-family: sans-serif;
+    background-color: DarkSlateGray
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: Turquoise;
+}
+
+h1,
+h2 {
+    font-family: 'georgia', serif;
+    margin: 0;
+}
+
+h1 {
+    border-bottom: 2px solid #eee;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+p,
+dd,
+dt {
+    color: #cccccc;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffcc;
+    font-size: .75em;
+}
+
+.categoriesList a{
+	
+	font-size: 22px;
+}
+
+.latestItems a{
+	
+	font-size: 18px;
+}
+
+.header {
+    overflow:hidden;
+	background-color: DimGray;
+	padding: 20px 10px;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 30px;
+	font-family: "Times New Roman";
+}
+
+.header a{
+    float: left;
+	color: black;
+	text-align: center;
+	padding: 10px;
+	background-color: dodgerblue;
+	border-radius: 10px;
+	
+	
+}
+.latestItems a{
+	color: LightCoral;
+	font-size: 18px;
+}
+
+.latestItems{
+	color: Lavender;
+}
+
+.account {
+	float: right;
+	padding-right: 25px;
+}
+
+.additem a {
+	float: right;
+	background-color: black;
+	font-size: 2em;
+}
+
+.seriesItems a{
+	color: LightCoral;
+	font-size: 18px;
+}
+
+.editDeleteItem a{
+	color: azure;
+	font-size: 14px;
+}
+
+.flash {
+    background: #cee5f5;
+}
+
+.row {
+	
+}
+
+.column {
+	float: left;
+
+}
+
+.left {
+	float: left;
+	width: 24%;
+    
+}
+
+.separator {
+	position: absolute;
+	left:25%;
+	border-left: 2px solid beige;
+	top: 55%;
+	height: 80%;
+}
+
+.right {
+	float: right;
+	width: 74%;
+	padding-left: 5px;
+}
+
+
+.add a {
+	color: azure;
+}
+
+.addInCategory a {
+	color: azure;
+}
+
+.description {
+	font-family: "Arial Narrow", sans-serif;
+	font-style: italic;
+}
+
+.description p {
+	color: white;
+}
+
+.picture {
+	float: right;
+}
+
+input:invalid {
+	border: 2px dashed red;
+}
+
+input:valid{
+	border: 2px solid black;
+}

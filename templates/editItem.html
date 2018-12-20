@@ -1,0 +1,37 @@
+<html>
+<head>
+	{% include "style.html" %}
+</head>
+<body>
+
+<form action= "{{url_for('editItem', category_name= category_name, series_name = series.name)}}" method = 'POST'>
+
+<p>Title:</p>
+<input type = 'text' size='30' name = 'name' placeholder = '{{series.name}}', value = '{{series.name}}' required minlength="2">
+
+<p>Director:</p>
+<input type = 'text' size='30' name = 'director' placeholder = '{{series.director}}' value = '{{series.director}}' required minlength="2">
+
+<p>Description:</p>
+<input type = 'text' size='30' name = 'description' placeholder = '{{series.description}}' value = '{{series.description}}' required minlength="2">
+
+<p>Image:</p>
+<input type = 'url' size='30' name = 'picture' placeholder = '{{series.picture}}' value = '{{series.picture}}'>
+
+<p>Category:</p>
+<select name="categories" method = "GET" action= "/">
+
+    {% for category in categories %}
+        {% if (category.name == category_name)%}
+		        <option value="{{category.name}}" SELECTED>{{category.name}}</option>      
+		{% else %}
+	        <option value="{{category.name}}">{{category.name}}</option>
+		{% endif %}
+	{% endfor %}
+</select>
+
+<input type='submit' value='Edit'>
+</form>
+<a href= '{{url_for('showItems', category_name= category_name)}}'>Cancel</a>
+</body>
+</html>

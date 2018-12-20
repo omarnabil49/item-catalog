@@ -1,0 +1,15 @@
+</br>
+<h1>Series Categories</h1>
+
+
+{% for i in series %}
+
+<div class="categoriesList">
+</br>
+<a href='{{url_for('showItems', category_name= i.name) }}'> {{i.name}} </a>
+</br>
+</br>
+
+</div>
+
+{% endfor %}

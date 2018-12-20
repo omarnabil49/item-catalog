@@ -1,0 +1,55 @@
+{% include "header.html" %}
+<html>
+<head>
+	{% include "style.html" %}
+</head>
+
+{% include "flash.html" %}
+
+<body>
+
+<div class="row">
+
+<div class="left">
+
+{% include "categoriesList.html" %}
+
+</div>
+
+<div class="separator">
+</div>
+
+<div class="right">
+
+</br>
+<h1>{{itemCategory.name}} Series ({{items|length}} Series)</h1>
+</br>
+<div class="addInCategory">
+<a href="{{url_for('newItem', category_name= itemCategory.name)}}"> Add Item </a>
+</div>
+
+{% for i in items %}
+
+<div class="seriesItems">
+
+</br>
+<a href='{{url_for('showItem', category_name=i.category.name, series_name=i.name)}}'> {{i.name}}</a>
+
+</br>
+</br>
+
+
+<div class="editDeleteItem">
+<a href='{{url_for('editItem', category_name= i.category.name, series_name = i.name) }}'>Edit</a>
+
+<a href='{{url_for('deleteItem', category_name= i.category.name, series_name = i.name) }}'>Delete</a>
+</div>
+
+{% endfor %}
+</div>
+
+</div>
+</div>
+</body>
+
+</html>
